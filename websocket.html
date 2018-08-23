@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <script>
+        // Then some JavaScript in the browser:
+        var ws = new WebSocket('ws://curex.ll:8008/?user=tester01');
+        ws.onmessage = function(evt) { console.log(evt); };
+        ws.onopen = function() {
+            console.log("connect");
+            ws.send("hello");
+        };
+        ws.onerror = function(error) {
+            console.log("Error " + error.message);
+        };
+    </script>
+</head>
+</html>
